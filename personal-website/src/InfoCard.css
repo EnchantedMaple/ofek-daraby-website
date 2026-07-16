@@ -1,0 +1,25 @@
+.card-right {
+    background-color: #4C8BF5;
+    color: #fff;
+}
+
+.card-right img {
+    float: right;
+}
+
+.card-right h1 {
+    float: left;
+}
+
+.card-left {
+    background-color: #4cf554;
+    color: #fff;
+}
+
+.card-left img {
+    float: left;
+}
+
+.card-left h1 {
+    float: right;
+}
