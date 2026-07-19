@@ -4,6 +4,7 @@ import './App.css'
 import InfoCard from './InfoCard'
 
 import picture from "./assets/hero.png"
+import background from "./assets/background.jpg"
 
 var cards = [
   {
@@ -23,6 +24,9 @@ function App() {
 
   return (
     <>
+      <div className='header' style={{"backgroundImage": background}} >
+        <h1 style={{"backgroundImage": background}}>Ofek Daraby</h1>
+      </div>
       <section id="center">
         {cards.map((card, index) => <InfoCard title={card.title} photo={card.photo} description={card.description} right={index % 2 == 0} />)}
       </section>

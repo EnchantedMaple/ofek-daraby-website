@@ -1,25 +1,47 @@
 .card-right {
-    background-color: #4C8BF5;
-    color: #fff;
+    flex-direction: row-reverse;
+    margin-left: 10%;
 }
 
-.card-right img {
-    float: right;
+.card-right .text-div {
+    align-items: flex-start;
+    padding-left: 100px;
 }
 
-.card-right h1 {
-    float: left;
-}
+/*****************************/
 
 .card-left {
-    background-color: #4cf554;
-    color: #fff;
+    flex-direction: row;
+    margin-right: 10%;
 }
 
-.card-left img {
-    float: left;
+.card-left .text-div {
+    align-items: flex-end;
+    padding-right: 100px;
 }
 
-.card-left h1 {
-    float: right;
+/*****************************/
+
+.card {
+    width: 60%;
+    display: flex;
+    background-color: #dedede;
+    border-radius: 100px;
+
+    margin-top: 100px;
+}
+
+.img-div {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.text-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    flex-grow: 2;
 }
