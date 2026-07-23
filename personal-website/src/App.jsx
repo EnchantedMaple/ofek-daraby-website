@@ -76,6 +76,7 @@ function App() {
     let newColor = "hsl(" + Math.floor(Math.random() * HUE_MAX) * HUE_STEPS + ", 100%, 80%)";
     let currentIcon = document.getElementById(id);
     let currentHeader = document.getElementById(id + "h2");
+    let i = 0;
 
     // only jump if not currently jumping
     if(!currentIcon.classList.contains("jumping")) {
@@ -87,9 +88,25 @@ function App() {
       forceUpdate();
       
       if(jump) {
-        currentIcon.classList.add("jumping");
+        // small chance to trigger all icons
+        if(Math.random() < 0.1) {
+          for(i = 0; i < icons.length; i++) {
+            currentIcon = document.getElementById(icons[i].id);
+            currentIcon.classList.add("jumping");
+            currentIcon.style.animationDelay = i * 80 + "ms";
+          }
+        }
+        else {
+          currentIcon.classList.add("jumping");
+        }
       }
     }
+  }
+
+  // reseting an icon's animation class and animation delay
+  function resetIcon(event) {
+    event.target.classList.remove("jumping")
+    event.target.style.animationDelay = "0ms";
   }
 
   // giving each icon a random color on page load
@@ -110,7 +127,7 @@ function App() {
           {icons.map((entry) =>
           <div className='icon' onClick={() => iconClick(entry.id, true)}>
             {/* probably the stupidest solution iv'e ever come up with, couldn't believe this would actually work */}
-            {<entry.icon id={entry.id} onAnimationEnd={(icon) => icon.target.classList.remove("jumping")} style={{position: "relative"}} />}
+            {<entry.icon id={entry.id} onAnimationEnd={resetIcon} style={{position: "relative"}} />}
             <h2 id={entry.id + "h2"} className='rainbow_text_animated'>{entry.text}</h2>
           </div>
             )}
