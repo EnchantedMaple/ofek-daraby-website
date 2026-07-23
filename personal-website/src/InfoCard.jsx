@@ -7,7 +7,6 @@ function randomBetween(min, max) {
 
 function InfoCard(props) {
   const [images, setImages] = useState([]);
-  //const [focused, setFocused] = useState(true);
   const idRef = useRef(0);
   var focused = useRef(true);
 
@@ -30,6 +29,9 @@ function InfoCard(props) {
     return () => clearInterval(interval);
   }, []);
     
+  // starting/pausing particle spawn on page focus/unfocus.
+  // if disabled, particles gather up at the start when
+  // page is not focused and go all together on page re-focus
   useEffect(() => {
       window.addEventListener("focus", () => {focused = true;});
       window.addEventListener("blur",  () => {focused = false;});
@@ -39,6 +41,7 @@ function InfoCard(props) {
       };
   }, []);
 
+  // removes a single object from list of object based on id
   const removeImage = (id) => {
     setImages((prev) => prev.filter((img) => img.id !== id));
   };
@@ -47,6 +50,7 @@ function InfoCard(props) {
     <div className={props.right ? "card-right card" : "card-left card"}>
 
       <div className="img-div">
+        { /* blurred background to main image */ }
         <div className="img-blur">
           <img src={props.photo} />
         </div>
@@ -55,13 +59,14 @@ function InfoCard(props) {
         <h1>{props.title}</h1>
         <h3>{props.description}</h3>
       </div>
-      
+
+      { /* rendering all the particles */ }
       {images.map((img) => (
         <img
           key={img.id}
           src={props.backgroundImage}
-          alt=""
           onAnimationEnd={() => removeImage(img.id)}
+          /* dynamic animation */
           style={{
             zIndex: -1,
             opacity: "25%",
@@ -71,8 +76,6 @@ function InfoCard(props) {
             height: `${img.size}px`,
             animationName: "crossDiv",
             animationDuration: `${img.duration}s`,
-            animationTimingFunction: "initial",
-            animationFillMode: "forwards",
             "--wobble": img.direction * img.wobble,
           }}
         />

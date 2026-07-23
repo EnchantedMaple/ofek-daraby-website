@@ -14,28 +14,21 @@
 }
 
 .header {
-  /*background-image: url("./assets/background.jpg");*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: space-around;
   background-color: rgba(40, 135, 190, 0.3);
+
   width: 100%;
   height: 800px;
+}
 
-  color: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
- }
-
- .header-title {
+.header h1 {
   flex-grow: 10;
-  justify-content: center;
-  align-items: center;
   align-content: space-around;
   margin-top: 100px;
- }
-
- .header-title h1 {
   font-size: 120px;
  }
 
@@ -51,8 +44,6 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
-
-  cursor: pointer;
  }
 
  .icon {
@@ -61,14 +52,15 @@
   align-items: center;
   gap: 5px;
   font-size: 90px;
+  cursor: pointer;
 
  }
 
  .jumping {
-  animation: jump 0.5s;
-  animation-timing-function: cubic-bezier(0.3,0.5,0,1);
+  animation: jump 0.5s cubic-bezier(0.3,0.5,0,1);
  }
 
+ /* why is it impossible to do a simple jump? this is the best i could manage */
  @keyframes jump {
   0% {
     transform:translateY(0px) rotate(0deg);
@@ -83,7 +75,8 @@
   }
 }
 
- /*
+/*
+DEPRECATED BUT COOL
 
 .rainbow_text_animated {
   background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
@@ -103,5 +96,4 @@
       background-position: 100% 0;
   }
 }
-  
 */
