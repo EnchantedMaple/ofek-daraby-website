@@ -23,6 +23,7 @@
 /*****************************/
 
 .card {
+    position: relative;
     width: 65%;
     display: flex;
     background-color: rgb(226, 226, 226);
@@ -30,13 +31,23 @@
     border-radius: 100px;
 
     margin-top: 100px;
+    overflow: hidden;
+    z-index: -2;
 }
 
 .img-div {
-    margin: 30px;
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    margin: 30px;
+}
+
+.img-blur {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 6px 8px 6px rgba(0,0,0,0.2);
+    padding: 30px;
+    backdrop-filter: blur(3px);
+    border-radius: 50px;
 }
 
 .text-div {
@@ -45,3 +56,23 @@
     justify-content: center;
     flex-grow: 2;
 }
+
+@keyframes crossDiv {
+    0% {
+      left: -80px;
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(calc(var(--wobble) * -1px)) rotate(-4deg);
+    }
+    50% {
+      transform: translateY(calc(var(--wobble) * 1px)) rotate(3deg);
+    }
+    75% {
+      transform: translateY(calc(var(--wobble) * -0.6px)) rotate(-2deg);
+    }
+    100% {
+      left: 120%;
+      transform: translateY(0) rotate(0deg);
+    }
+  }
