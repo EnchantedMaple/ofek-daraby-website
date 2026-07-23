@@ -57,6 +57,16 @@
     flex-grow: 2;
 }
 
+.text-div h1 {
+  font-family: "NexagonBold";
+  letter-spacing: 0.1em;
+}
+
+.text-div h3 {
+  font-family: "NexagonRegular";
+  letter-spacing: 0.1em;
+}
+
 @keyframes crossDiv {
     0% {
       left: -80px;

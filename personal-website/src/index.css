@@ -50,6 +50,16 @@
   }
 }
 
+@font-face {
+  font-family: 'NexagonBold';
+  src: local('NexagonBold'), url(./fonts/NexagonBold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'NexagonRegular';
+  src: local('NexagonRegular'), url(./fonts/NexagonRegular.otf) format('opentype');
+}
+
 body {
   margin: 0;
 }

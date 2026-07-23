@@ -111,7 +111,7 @@ function App() {
           <div className='icon' onClick={() => iconClick(entry.id, true)}>
             {/* probably the stupidest solution iv'e ever come up with, couldn't believe this would actually work */}
             {<entry.icon id={entry.id} onAnimationEnd={(icon) => icon.target.classList.remove("jumping")} style={{position: "relative"}} />}
-            <h2 id={entry.id + "h2"} className='rainbow_text_animated' style={{color: "inherit"}}>{entry.text}</h2>
+            <h2 id={entry.id + "h2"} className='rainbow_text_animated'>{entry.text}</h2>
           </div>
             )}
         </div>
