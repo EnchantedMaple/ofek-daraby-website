@@ -21,15 +21,27 @@ const MIN_JUMPS_EASTER_EGG = 3
 // used for the cards with the personal info
 var cards = [
   {
-    title: "Yepee",
+    title: "My Life",
     photo: picture,
-    description: "were rolling",
+    description: /* \u{2082} for numbers */ "Born 2003, I've always been very curious and creative, trying to make new things and explore unknown subjects. My outlet for creativity went through a lot of phases and ended up taking me to violin classes for 10 years as well as programming and developing tools and even games.",
     backgroundImage: bubble,
   },
   {
-    title: "you pee",
+    title: "My Traits",
     photo: picture,
-    description: "were rolling",
+    description: "I'm very open-minded, always glad to learn new things from people or explain things of my own. I like to make jokes and have a sarcastic sense of humor. Disciplined, a lot of energy and motiviation, very joyful and respectful of other people that I meet.",
+    backgroundImage: bubble,
+  },
+  {
+    title: "How I Think",
+    photo: picture,
+    description: "I have a very calculated mind which can understand problems on a fundemental level helped me excel in school and achive great positions in life. I like to take inspirations from all sorts of media to make my work including shows, art, music, games and more.",
+    backgroundImage: bubble,
+  },
+  {
+    title: "Social Life",
+    photo: picture,
+    description: "Early on in life I had problems understanding and joining others but over the years I worked on these problems. Now I have many friedns from different branches of life who I enjoy spending time with and being around.",
     backgroundImage: bubble,
   }
 ]

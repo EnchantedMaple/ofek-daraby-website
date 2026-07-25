@@ -60,6 +60,11 @@
   src: local('NexagonRegular'), url(./fonts/NexagonRegular.otf) format('opentype');
 }
 
+@font-face {
+  font-family: 'SCM';
+  src: local('Sweet Cucumber Mocktail'), url(./fonts/SweetCucumberMocktail.ttf) format('truetype');
+}
+
 body {
   margin: 0;
 }

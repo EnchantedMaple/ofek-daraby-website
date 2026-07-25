@@ -57,7 +57,7 @@ function InfoCard(props) {
       </div>
       <div className="text-div">
         <h1>{props.title}</h1>
-        <h3>{props.description}</h3>
+        <h2>{props.description}</h2>
       </div>
 
       { /* rendering all the particles */ }
