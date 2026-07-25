@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useState } from 'react'
+import { useReducer, useEffect, useRef } from 'react'
 
 import './App.css'
 
@@ -16,6 +16,7 @@ import { HiMiniPuzzlePiece } from "react-icons/hi2";
 
 const HUE_MAX = 36
 const HUE_STEPS = 10
+const MIN_JUMPS_EASTER_EGG = 3
 
 // used for the cards with the personal info
 var cards = [
@@ -70,6 +71,7 @@ var icons = [
 
 function App() {
   const [, forceUpdate] = useReducer(x => x + 1, 0); // component won't re-render without this
+  const jumpCount = useRef(0);
 
   // jump on click event
   function iconClick(id, jump) {
@@ -89,7 +91,8 @@ function App() {
       
       if(jump) {
         // small chance to trigger all icons
-        if(Math.random() < 0.1) {
+        // can't happen the first MIN_JUMPS_EASTER_EGG times
+        if(Math.random() < 0.1 && jumpCount.current >= MIN_JUMPS_EASTER_EGG) {
           for(i = 0; i < icons.length; i++) {
             currentIcon = document.getElementById(icons[i].id);
             currentIcon.classList.add("jumping");
@@ -99,6 +102,7 @@ function App() {
         else {
           currentIcon.classList.add("jumping");
         }
+        jumpCount.current++;
       }
     }
   }
