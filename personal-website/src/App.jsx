@@ -23,26 +23,34 @@ var cards = [
   {
     title: "My Life",
     photo: picture,
-    description: /* \u{2082} for numbers */ "Born 2003, I've always been very curious and creative, trying to make new things and explore unknown subjects. My outlet for creativity went through a lot of phases and ended up taking me to violin classes for 10 years as well as programming and developing tools and even games.",
+    description: /* \u{2082} for numbers */ "Born in 2003, I've always been very curious and creative, trying to make new things and explore unknown subjects. My outlet for creativity went through a lot of phases and ended up taking me to violin classes for 10 years as well as programming and creating tools and even games.",
     backgroundImage: bubble,
+    titleFont: "KH",
+    descriptionFont: "SCM",
   },
   {
     title: "My Traits",
     photo: picture,
     description: "I'm very open-minded, always glad to learn new things from people or explain things of my own. I like to make jokes and have a sarcastic sense of humor. Disciplined, a lot of energy and motiviation, very joyful and respectful of other people that I meet.",
     backgroundImage: bubble,
+    titleFont: "DM",
+    descriptionFont: "DM",
   },
   {
     title: "How I Think",
     photo: picture,
-    description: "I have a very calculated mind which can understand problems on a fundemental level helped me excel in school and achive great positions in life. I like to take inspirations from all sorts of media to make my work including shows, art, music, games and more.",
+    description: "I have a very calculated mind that can understand problems on a fundemental level which helped me excel in school and achive great positions in life. I like to take inspirations from all sorts of media to make my work including shows, art, music, games and more.",
     backgroundImage: bubble,
+    titleFont: "CVBl",
+    descriptionFont: "CVBo",
   },
   {
     title: "Social Life",
     photo: picture,
-    description: "Early on in life I had problems understanding and joining others but over the years I worked on these problems. Now I have many friedns from different branches of life who I enjoy spending time with and being around.",
+    description: "Early on in life I had problems understanding and conversing with others but over the years I worked on these problems. Now I have many friedns from different branches of life who I enjoy spending time with and being around.",
     backgroundImage: bubble,
+    titleFont: "JM",
+    descriptionFont: "JM",
   }
 ]
 
@@ -159,6 +167,8 @@ function App() {
             description={card.description}
             backgroundImage={card.backgroundImage}
             right={index % 2 == 0}
+            titleFont={card.titleFont}
+            descriptionFont={card.descriptionFont}
           />)}
       </section>
     </>

@@ -65,6 +65,31 @@
   src: local('Sweet Cucumber Mocktail'), url(./fonts/SweetCucumberMocktail.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'KH';
+  src: local('KindHeart'), url(./fonts/KindHeart.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'DM';
+  src: local('DueMining'), url(./fonts/DueMining.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'CVBl';
+  src: local('OctosquaresExtraBold'), url(./fonts/OctosquaresExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'CVBo';
+  src: local('OctosquaresDemiBold'), url(./fonts/OctosquaresDemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'JM';
+  src: local('JandaManateeSolid'), url(./fonts/JandaManateeSolid.ttf) format('truetype');
+}
+
 body {
   margin: 0;
 }

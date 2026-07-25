@@ -65,7 +65,7 @@
  }
 
  .jumping {
-  animation: jump 0.5s cubic-bezier(0.3,0.5,0,1);
+  animation: jump 0.45s cubic-bezier(0.3,0.5,0,1);
  }
 
  /* why is it impossible to do a simple jump? managed to do this which is also good */

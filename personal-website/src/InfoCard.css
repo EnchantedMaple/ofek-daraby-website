@@ -62,15 +62,13 @@
 }
 
 .text-div h1 {
-  font-family: "SCM";
   letter-spacing: 0.1em;
   color: rgb(108, 7, 167);
 }
 
 .text-div h2 {
   font-size: 30px;
-  font-family: "SCM";
-  letter-spacing: 0.1em;
+  letter-spacing: 0.09em;
   color: rgb(163, 26, 197);
 }
 

@@ -56,8 +56,8 @@ function InfoCard(props) {
         </div>
       </div>
       <div className="text-div">
-        <h1>{props.title}</h1>
-        <h2>{props.description}</h2>
+        <h1 style={{fontFamily: props.titleFont}}>{props.title}</h1>
+        <h2 style={{fontFamily: props.descriptionFont}}>{props.description}</h2>
       </div>
 
       { /* rendering all the particles */ }
