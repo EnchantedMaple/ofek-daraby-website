@@ -4,8 +4,10 @@ import './App.css'
 
 import InfoCard from './InfoCard'
 
-import picture from "./assets/hero.png"
-import bubble from "./assets/bubble.png"
+import lifePic from "./assets/lifePic.png"
+import traitsPic from "./assets/traitsPic.png"
+import thinkPic from "./assets/thinkPic.jpg"
+import socialPic from "./assets/socialPic.jpg"
 
 // icons
 import { HiCog6Tooth } from "react-icons/hi2";
@@ -14,41 +16,55 @@ import { HiCubeTransparent } from "react-icons/hi2";
 import { HiCodeBracket } from "react-icons/hi2";
 import { HiMiniPuzzlePiece } from "react-icons/hi2";
 
+import { VscDebugContinue } from "react-icons/vsc";
+import { FaLeaf } from "react-icons/fa";
+import { TbBracketsContain } from "react-icons/tb";
+import { HiOutlineChatBubbleOvalLeft } from "react-icons/hi2";
+
 const HUE_MAX = 36
 const HUE_STEPS = 10
 const MIN_JUMPS_EASTER_EGG = 3
+const ICONS_INTERVAL_EASTER_EGG = 80
 
 // used for the cards with the personal info
 var cards = [
   {
     title: "My Life",
-    photo: picture,
+    photo: lifePic,
     description: /* \u{2082} for numbers */ "Born in 2003, I've always been very curious and creative, trying to make new things and explore unknown subjects. My outlet for creativity went through a lot of phases and ended up taking me to violin classes for 10 years as well as programming and creating tools and even games.",
-    backgroundImage: bubble,
+    icon: VscDebugContinue,
+    color: "rgb(177, 39, 158)",
+    opacity: "8%",
     titleFont: "KH",
     descriptionFont: "SCM",
   },
   {
     title: "My Traits",
-    photo: picture,
+    photo: traitsPic,
     description: "I'm very open-minded, always glad to learn new things from people or explain things of my own. I like to make jokes and have a sarcastic sense of humor. Disciplined, a lot of energy and motiviation, very joyful and respectful of other people that I meet.",
-    backgroundImage: bubble,
+    icon: FaLeaf,
+    color: "rgb(40, 201, 88)",
+    opacity: "15%",
     titleFont: "DM",
     descriptionFont: "DM",
   },
   {
     title: "How I Think",
-    photo: picture,
+    photo: thinkPic,
     description: "I have a very calculated mind that can understand problems on a fundemental level which helped me excel in school and achive great positions in life. I like to take inspirations from all sorts of media to make my work including shows, art, music, games and more.",
-    backgroundImage: bubble,
+    icon: TbBracketsContain,
+    color: "rgb(106, 50, 211)",
+    opacity: "10%",
     titleFont: "CVBl",
     descriptionFont: "CVBo",
   },
   {
     title: "Social Life",
-    photo: picture,
+    photo: socialPic,
     description: "Early on in life I had problems understanding and conversing with others but over the years I worked on these problems. Now I have many friedns from different branches of life who I enjoy spending time with and being around.",
-    backgroundImage: bubble,
+    icon: HiOutlineChatBubbleOvalLeft,
+    color: "rgb(192, 135, 50)",
+    opacity: "15%",
     titleFont: "JM",
     descriptionFont: "JM",
   }
@@ -116,7 +132,7 @@ function App() {
           for(i = 0; i < icons.length; i++) {
             currentIcon = document.getElementById(icons[i].id);
             currentIcon.classList.add("jumping");
-            currentIcon.style.animationDelay = i * 80 + "ms";
+            currentIcon.style.animationDelay = i * ICONS_INTERVAL_EASTER_EGG + "ms";
           }
         }
         else {
@@ -165,7 +181,9 @@ function App() {
             title={card.title}
             photo={card.photo}
             description={card.description}
-            backgroundImage={card.backgroundImage}
+            icon={card.icon}
+            color={card.color}
+            opacity={card.opacity}
             right={index % 2 == 0}
             titleFont={card.titleFont}
             descriptionFont={card.descriptionFont}

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import './InfoCard.css'
 
+const ICONS_DELAY = 800
+
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -24,7 +26,7 @@ function InfoCard(props) {
         };
         setImages((prev) => [...prev, newImage]);
       }
-    }, 350);
+    }, ICONS_DELAY);
 
     return () => clearInterval(interval);
   }, []);
@@ -52,7 +54,7 @@ function InfoCard(props) {
       <div className="img-div">
         { /* blurred background to main image */ }
         <div className="img-blur">
-          <img src={props.photo} />
+          <img src={props.photo} style={{height: "280px", borderRadius: "40px"}} />
         </div>
       </div>
       <div className="text-div">
@@ -62,14 +64,14 @@ function InfoCard(props) {
 
       { /* rendering all the particles */ }
       {images.map((img) => (
-        <img
+        <props.icon
           key={img.id}
-          src={props.backgroundImage}
           onAnimationEnd={() => removeImage(img.id)}
           /* dynamic animation */
           style={{
+            color: props.color,
             zIndex: -1,
-            opacity: "25%",
+            opacity: props.opacity,
             position: "absolute",
             top: `${img.topPercent}%`,
             width: `${img.size}px`,

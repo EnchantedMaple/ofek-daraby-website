@@ -48,7 +48,7 @@
 .img-blur {
     background-color: rgba(255, 255, 255, 0.2);
     box-shadow: 6px 8px 6px rgba(0,0,0,0.2);
-    padding: 30px;
+    padding: 20px;
     backdrop-filter: blur(3px);
     border-radius: 50px;
 }
@@ -78,13 +78,13 @@
       transform: translateY(0) rotate(0deg);
     }
     25% {
-      transform: translateY(calc(var(--wobble) * -1px)) rotate(-4deg);
+      transform: translateY(calc(var(--wobble) * -1px)) rotate(-8deg);
     }
     50% {
-      transform: translateY(calc(var(--wobble) * 1px)) rotate(3deg);
+      transform: translateY(calc(var(--wobble) * 1px)) rotate(6deg);
     }
     75% {
-      transform: translateY(calc(var(--wobble) * -0.6px)) rotate(-2deg);
+      transform: translateY(calc(var(--wobble) * -0.6px)) rotate(-4deg);
     }
     100% {
       left: 120%;
