@@ -54,7 +54,7 @@ function InfoCard(props) {
       <div className="img-div">
         { /* blurred background to main image */ }
         <div className="img-blur">
-          <img src={props.photo} style={{height: "280px", borderRadius: "40px"}} />
+          <img src={props.photo} />
         </div>
       </div>
       <div className="text-div">
