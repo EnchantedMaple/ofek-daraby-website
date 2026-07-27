@@ -8,7 +8,7 @@ function randomBetween(min, max) {
 }
 
 function InfoCard(props) {
-  const [images, setImages] = useState([]);
+  const [particles, setParticles] = useState([]);
   const idRef = useRef(0);
   var focused = useRef(true);
 
@@ -16,7 +16,7 @@ function InfoCard(props) {
     const interval = setInterval(() => {
       if(focused) {
         const id = idRef.current++;
-        const newImage = {
+        const newParticle = {
           id,
           duration: randomBetween(15, 20), // seconds to cross the div
           topPercent: randomBetween(10, 80), // starting vertical position
@@ -24,7 +24,7 @@ function InfoCard(props) {
           direction: Math.random() > 0.5 ? 1 : -1, // wobble up first or down first
           size: randomBetween(40, 64), // px
         };
-        setImages((prev) => [...prev, newImage]);
+        setParticles((prev) => [...prev, newParticle]);
       }
     }, ICONS_DELAY);
 
@@ -44,8 +44,8 @@ function InfoCard(props) {
   }, []);
 
   // removes a single object from list of object based on id
-  const removeImage = (id) => {
-    setImages((prev) => prev.filter((img) => img.id !== id));
+  const removeParticle = (id) => {
+    setParticles((prev) => prev.filter((img) => img.id !== id));
   };
 
   return (
@@ -63,22 +63,22 @@ function InfoCard(props) {
       </div>
 
       { /* rendering all the particles */ }
-      {images.map((img) => (
+      {particles.map((particle) => (
         <props.icon
-          key={img.id}
-          onAnimationEnd={() => removeImage(img.id)}
+          key={particle.id}
+          onAnimationEnd={() => removeParticle(particle.id)}
           /* dynamic animation */
           style={{
             color: props.color,
             zIndex: -1,
             opacity: props.opacity,
             position: "absolute",
-            top: `${img.topPercent}%`,
-            width: `${img.size}px`,
-            height: `${img.size}px`,
+            top: `${particle.topPercent}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
             animationName: "crossDiv",
-            animationDuration: `${img.duration}s`,
-            "--wobble": img.direction * img.wobble,
+            animationDuration: `${particle.duration}s`,
+            "--wobble": particle.direction * particle.wobble,
           }}
         />
       ))}
