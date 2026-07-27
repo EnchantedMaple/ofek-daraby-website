@@ -1,4 +1,6 @@
 
+ /* NOTE: every calc(Xvw + Ypx) is for both wide and narrow screen size, instead of @media */
+
 #center {
   display: flex;
   flex-direction: column;
@@ -6,11 +8,6 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
 }
 
 .header {
@@ -29,11 +26,16 @@
 .header h1 {
   flex-grow: 10;
   align-content: space-around;
-  margin-top: 100px;
-  font-size: 120px;
+  margin: 100px 40px 0px 40px;
+  font-size: calc(3vw + 50px);
+  line-height: 70px;
 
   font-family: "NexagonBold";
   letter-spacing: 0.15em;
+  
+  @media (max-width: 1024px) {
+    flex-grow: 1;
+  }
  }
 
  .icons {
@@ -43,6 +45,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 15px;
 
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
@@ -50,7 +54,7 @@
   user-select: none; /* Standard */
  }
 
- .icon {
+ .icon-div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,9 +63,15 @@
   cursor: pointer;
  }
 
- .icon h2 {
+.icon {
+  position: relative;
+  max-width: 18vw;
+}
+
+ .icon-div h2 {
   font-family: "NexagonRegular" !important;
   letter-spacing: 0.1em;
+  font-size: calc(16px + 0.35vw);
  }
 
  .jumping {

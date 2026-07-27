@@ -165,9 +165,9 @@ function App() {
         <h1>Ofek Daraby</h1>
         <div className='icons'>
           {icons.map((entry) =>
-          <div className='icon' onClick={() => iconClick(entry.id, true)}>
+          <div className='icon-div' onClick={() => iconClick(entry.id, true)}>
             {/* probably the stupidest solution iv'e ever come up with, couldn't believe this would actually work */}
-            {<entry.icon id={entry.id} onAnimationEnd={resetIcon} style={{position: "relative"}} />}
+            {<entry.icon id={entry.id} onAnimationEnd={resetIcon} className='icon' />}
             <h2 id={entry.id + "h2"} className='rainbow_text_animated'>{entry.text}</h2>
           </div>
             )}
