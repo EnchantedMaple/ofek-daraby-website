@@ -26,6 +26,8 @@ const HUE_STEPS = 10
 const MIN_JUMPS_EASTER_EGG = 3
 const ICONS_INTERVAL_EASTER_EGG = 80
 
+import addScore from "./firebaseFunctions.jsx"
+
 // used for the cards with the personal info
 var cards = [
   {
