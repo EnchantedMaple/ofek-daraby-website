@@ -22,7 +22,7 @@ function InfoCard(props) {
           topPercent: randomBetween(10, 80), // starting vertical position
           wobble: randomBetween(15, 45), // px of up/down drift during travel
           direction: Math.random() > 0.5 ? 1 : -1, // wobble up first or down first
-          size: randomBetween(40, 64), // px
+          size: randomBetween(1.5, 3), // px
         };
         setParticles((prev) => [...prev, newParticle]);
       }
@@ -74,8 +74,8 @@ function InfoCard(props) {
             opacity: props.opacity,
             position: "absolute",
             top: `${particle.topPercent}%`,
-            width: `${particle.size}px`,
-            height: `${particle.size}px`,
+            width: `calc(${particle.size}vw + 10px)`,
+            height: `calc(${particle.size}vw + 10px)`,
             animationName: "crossDiv",
             animationDuration: `${particle.duration}s`,
             "--wobble": particle.direction * particle.wobble,
