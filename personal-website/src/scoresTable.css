@@ -1,0 +1,9 @@
+.sticky-div {
+    position: absolute;
+
+    display: flex;
+    min-width: 100vw;
+
+    align-items: flex-start;
+    justify-content: flex-end;
+}
