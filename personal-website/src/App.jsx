@@ -3,6 +3,7 @@ import { useReducer, useEffect, useRef } from 'react'
 import './App.css'
 
 import InfoCard from './InfoCard'
+import ScoresTable from './scoresTable.jsx'
 
 import lifePic from "./assets/lifePic.png"
 import traitsPic from "./assets/traitsPic.png"
@@ -25,8 +26,6 @@ const HUE_MAX = 36
 const HUE_STEPS = 10
 const MIN_JUMPS_EASTER_EGG = 3
 const ICONS_INTERVAL_EASTER_EGG = 80
-
-import addScore from "./firebaseFunctions.jsx"
 
 // used for the cards with the personal info
 var cards = [
